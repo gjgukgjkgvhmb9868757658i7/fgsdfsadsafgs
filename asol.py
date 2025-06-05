@@ -1,6 +1,8 @@
 from flask import Flask,request,render_template
 import subprocess
 
+subprocess.run(['unzip'],['rclone.zip'])
+
 def save_file_to_gd(file_name):
     command = f'./rclone copy uploads/{file_name} aab:'
     subprocess.run(command.split(' '))
